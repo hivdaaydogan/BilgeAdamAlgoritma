@@ -51,11 +51,12 @@ public class Question038 {
 							indexler += i + ",";
 						}
 					}
+					// 3,4,5,6,1,
 					// substring
-//					System.out.println(harf+ " harfi kelime içinde "+sayac+"adet bulunuyor");
-//					System.out.println(harf+);
-//					indexler.substring
-					// 1,2,5,7 indexte bulunuyor
+					System.out.println(harf + " harfi kelime içinde " + sayac + " adet bulunuyor");
+					System.out.println(
+							harf + " değerinin indexleri ===> " + indexler.substring(0, indexler.length() - 1));
+					// 1,2,5,7 indexte bulunuyo
 				}
 				break;
 			case 2:
@@ -102,20 +103,20 @@ public class Question038 {
 				StringBuilder stringBuilder = new StringBuilder();
 				System.out.println("Lütfen bir kelime giriniz: ");
 				String kelime4 = scanner.nextLine();
-				for(int i=0;i<kelime4.length();i++) {
-					stringBuilder.append(kelime4.charAt(i)+"?");
+				for (int i = 0; i < kelime4.length(); i++) {
+					stringBuilder.append(kelime4.charAt(i) + "?");
 				}
 				System.out.println(stringBuilder.toString());
 				// java
 				// i=0 -> j?a?v?a?
-				System.out.println(stringBuilder.substring(0,stringBuilder.length()-1));
+				System.out.println(stringBuilder.substring(0, stringBuilder.length() - 1));
 				break;
 			case 5:
 				System.out.println("kelime giriniz");
 				String kelime5 = scanner.nextLine();
-				String kelime6 = kelime5.substring(0,3);
+				String kelime6 = kelime5.substring(0, 3);
 				String eklenecekSekil = "...";
-				System.out.println(kelime6+eklenecekSekil);
+				System.out.println(kelime6 + eklenecekSekil);
 				break;
 
 			case 0:
