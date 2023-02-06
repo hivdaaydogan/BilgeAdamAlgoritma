@@ -20,6 +20,9 @@ public class HWQuestion003 {
 			}
 		}
 		System.out.println("toplam: " + toplam);
+		
+		// iki tane 13 üst üste geldiğinde problemli bunu çözelim.
+		// son eleman 13 ise problemli, bunu da çözelim.
 	}
 
 }
