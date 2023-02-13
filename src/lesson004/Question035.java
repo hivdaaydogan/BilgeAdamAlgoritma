@@ -1,5 +1,4 @@
 package lesson004;
-
 import javax.print.DocFlavor.STRING;
 
 public class Question035 {

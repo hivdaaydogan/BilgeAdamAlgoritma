@@ -31,7 +31,7 @@ public class Question038 {
 			System.out.println("0-çıkış");
 			int secim = scanner.nextInt();
 			scanner.nextLine();
-
+			
 			switch (secim) {
 			case 1:
 				// ahmetm
