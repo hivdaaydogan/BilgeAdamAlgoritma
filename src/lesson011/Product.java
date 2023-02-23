@@ -8,11 +8,12 @@ public class Product {
 	private String id;
 	private int stock;
 	private int price;
+	private boolean isActive = true;
+	private String productCode;
 
 	// Overloading
 	public Product() {
 		// Bir sınıftan nesne ürettiğimizde arkada tarafta çalışan ilk metottur.
-
 		this.id = RandomGenerateId.generateId();
 	}
 
@@ -21,6 +22,27 @@ public class Product {
 		this.id = RandomGenerateId.generateId();
 		this.stock = stock;
 		this.price = price;
+		this.productCode = RandomGenerateId.generateProductCode(name);
+	}
+
+	public String getProductCode() {
+		return productCode;
+	}
+
+	public void setProductCode(String name) {
+		this.productCode = RandomGenerateId.generateProductCode(name);
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -72,10 +94,11 @@ public class Product {
 	public void veriTabanınaKayder() {
 		System.out.println(getName() + " Veri tabanıana kaydedildi");
 	}
-	
-	public void aktifUrun() {
-		boolean isActive = true;
-		
-	}
 
+	public void gosterimdenKaldir() {
+		if (getStock() <= 0) {
+			setActive(false);
+			System.out.println(getName() + " Gosterimden kaldırıldı");
+		}
+	}
 }
