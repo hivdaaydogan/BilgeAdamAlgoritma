@@ -53,7 +53,30 @@ public class Main {
 		
 		// KrediBasvurusunuReddet()
 		// kredi başvurusunun olması lazım.
-		//
+		
+		// Acount Nesnesi oluşturduğumuz
+		// Otomatik id atasın
+		
+		//*************************************************************************************************
+		
+		// krediKartiBorcunuOde()
+		// Dışarıdan nakit ödeme
+		// eğer user'ın çekmiş olduğu kredi yoksa veya kredi başvurusu reddedilmiş ise 
+		// işleminizi gerçekleştiremiyoruz
+		// çekilmiş kredi varsa parametre olarak girdiğimiz miktar kadar ödeme yapmış olalım
+		// ve kredi kartı borucndan düşülsün
+		
+		// çıktı olarak --> güncel kredi kartı borcunuz ...TL 
+		
+		// hesaptanKrediBorcunuOde();
+		
+		// hesaptan borç ödeyelim
+		// Account kredi puanı 10 puan artsın
+		
+		// Nakit avans çekicez
+		// nakit avans çekmemiz için bizim kredi notumuzun 50 den fazla olması lazım
+		// eğer 50den fazla ise hesaptaki paranın yarısı kadar nakit avans almış olacağız
+		// 50 den az ise kredi notunuz yetersizdir ve kredi notunu bastırsın.
 		
 		
 		AccountManager accountManager = new AccountManager();
@@ -101,9 +124,23 @@ public class Main {
 		
 		System.out.println(account3.getMoney());
 		userManager.krediBasvurusundaBulun(account3, 25000);
-		adminManager.krediBasvurusunuOnayla(user3);
-		adminManager.krediBasvurusunuOnayla(user3);
+		adminManager.krediBasvurusunuOnayla(account3);
+		//adminManager.krediBasvurusunuReddet(account3);
 		accountManager.accountDetails(account3);
+		userManager.krediBorcunuOde(account3, 5000);
+		userManager.krediBorcunuOde(account3, 15000);
+		System.out.println(account3.getKrediBorcu());
+		System.out.println("Bakiyeniz: "+account3.getMoney());
+		userManager.hesaptanKrediBorcunuOde(account3, 1000);
+		userManager.hesaptanKrediBorcunuOde(account3, 1000);
+		userManager.hesaptanKrediBorcunuOde(account3, 1000);
+		userManager.hesaptanKrediBorcunuOde(account3, 6000);
+		System.out.println(account3.getKrediBorcu());
+		System.out.println("Bakiyeniz: "+account3.getMoney());
+		
+		userManager.nakitAvansCek(account3, 2000);
+		System.out.println("Bakiyeniz: "+account3.getMoney());
+		
 		System.out.println("*****************");
 		
 		

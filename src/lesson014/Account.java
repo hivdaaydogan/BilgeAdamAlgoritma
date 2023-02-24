@@ -10,6 +10,13 @@ public class Account {
 	private int istenenKrediMiktari;
 	private boolean krediBasvurusu = false;
 	
+	private int krediBorcu;
+	private boolean krediAlindiMi = false;
+	
+	private boolean krediBorcuOdendiMi;
+	private int nakitAvans;
+	private int krediPuani;
+	
 	
 
 //	public void depositMoney(int money) {
@@ -83,6 +90,59 @@ public class Account {
 	public void setKrediBasvurusu(boolean krediBasvurusu) {
 		this.krediBasvurusu = krediBasvurusu;
 	}
+
+
+	public int getKrediBorcu() {
+		return krediBorcu;
+	}
+
+
+	public void setKrediBorcu(int krediBorcu) {
+		this.krediBorcu = krediBorcu;
+	}
+
+
+	public boolean isKrediAlindiMi() {
+		return krediAlindiMi;
+	}
+
+
+	public void setKrediAlindiMi(boolean krediAlindiMi) {
+		this.krediAlindiMi = krediAlindiMi;
+	}
+
+
+	public boolean isKrediBorcuOdendiMi() {
+		return krediBorcuOdendiMi;
+	}
+
+
+	public void setKrediBorcuOdendiMi(boolean krediBorcuOdendiMi) {
+		this.krediBorcuOdendiMi = krediBorcuOdendiMi;
+	}
+
+
+	public int getNakitAvans() {
+		return nakitAvans;
+	}
+
+
+	public void setNakitAvans(int nakitAvans) {
+		this.nakitAvans = nakitAvans;
+	}
+
+
+	public int getKrediPuani() {
+		return krediPuani;
+	}
+
+
+	public void setKrediPuani(int krediPuani) {
+		this.krediPuani = krediPuani;
+	}
+
+
+	
 	
 	
 

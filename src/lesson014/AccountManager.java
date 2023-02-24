@@ -1,5 +1,7 @@
 package lesson014;
 
+import java.util.Random;
+
 public class AccountManager {
 
 	public void depositMoney(Account account,int money) {
@@ -23,6 +25,13 @@ public class AccountManager {
 	
 	public void accountDetails(Account account) {
 		System.out.println("Hesap no: " + account.getAcountNo() + " Güncel bakiyeniz: " + account.getMoney());
+	}
+	
+	public static String generateAccountID() {
+		Random rnd = new Random();
+		Long random = rnd.nextLong(1000,10000);
+		String stringID = String.valueOf(random);
+		return stringID;
 	}
 	
 }

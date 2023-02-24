@@ -8,6 +8,13 @@ public class AdminManager {
 			System.out.println("Kredi başvurunuz onaylanmıştır.");
 			account.setMoney(account.getMoney() + account.getIstenenKrediMiktari());
 			account.setKrediBasvurusu(false);
+			
+			account.setKrediBorcu(account.getIstenenKrediMiktari());
+			account.setKrediAlindiMi(true);
+			
+			account.setKrediBasvurusu(false);
+			account.setIstenenKrediMiktari(0);
+			
 		} else {
 			System.err.println("Kredi başvurunuz bulunmamaktadır.");
 		}
