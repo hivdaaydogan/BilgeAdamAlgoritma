@@ -1,4 +1,4 @@
-package lesson15.veteriner;
+package lesson015.veteriner;
 
 public class Main {
 

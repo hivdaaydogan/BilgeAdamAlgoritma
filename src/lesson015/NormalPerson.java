@@ -1,4 +1,4 @@
-package lesson15;
+package lesson015;
 
 public class NormalPerson extends Person{
 	
