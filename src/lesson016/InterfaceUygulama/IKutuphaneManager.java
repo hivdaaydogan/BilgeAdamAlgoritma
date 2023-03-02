@@ -12,5 +12,8 @@ public interface IKutuphaneManager {
 	
 	void indirimYap();
 	
+	void kitabiGuncelle();
+	
+	void indirimListele();
 	
 }

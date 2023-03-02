@@ -7,11 +7,13 @@ public class Kutuphane implements IKutuphaneManager {
 
 	private String isim;
 	private List<Kitap> kitapListesi;
+	private List<Kitap> indirimliKitaplar;
 
 	public Kutuphane(String isim) {
 		super();
 		this.isim = isim;
 		this.kitapListesi = new ArrayList<>();
+		this.indirimliKitaplar = new ArrayList<>();
 		System.out.println("Kütüphane oluştu.");
 	}
 
@@ -25,6 +27,14 @@ public class Kutuphane implements IKutuphaneManager {
 
 	public List<Kitap> getKitapListesi() {
 		return kitapListesi;
+	}
+
+	public List<Kitap> getIndirimliKitaplar() {
+		return indirimliKitaplar;
+	}
+
+	public void setIndirimliKitaplar(List<Kitap> indirimliKitaplar) {
+		this.indirimliKitaplar = indirimliKitaplar;
 	}
 
 	@Override
@@ -85,6 +95,7 @@ public class Kutuphane implements IKutuphaneManager {
 		if (kitap != null) {
 			kitap.setFiyat(kitap.getFiyat() - indirim);
 			System.out.println("Güncel Fiyatı--> " + kitap.getFiyat());
+			getIndirimliKitaplar().add(kitap);
 		}
 		
 	}
@@ -98,6 +109,25 @@ public class Kutuphane implements IKutuphaneManager {
 		}
 			System.out.println("kitap bulunamamıştır");
 			return null;
+	}
+
+	@Override
+	public void kitabiGuncelle() {
+		String isim = Util.stringDegerAl("Lütfen Kitap İsmini Girin");
+		Kitap kitap = kontrol(isim);
+		if (kitap != null) {
+			String isim2 = Util.stringDegerAl("Lütfen güncellenecek ismi girin");
+			kitap.setIsim(isim2);
+			System.out.println(isim + " " + isim2 + " olarak güncellenmiştir.");
+		}
+	}
+
+	@Override
+	public void indirimListele() {
+		System.out.println("indirimdeki kitaplar: ");
+		for(Kitap kitap : indirimliKitaplar) {
+			System.out.println(kitap.getIsim());
+		}
 	}
 	
 	

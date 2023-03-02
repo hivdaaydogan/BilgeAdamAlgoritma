@@ -12,6 +12,8 @@ public class Main {
 			System.out.println("3- Yazar ismiyle ara");
 			System.out.println("4- Kitap Sil");
 			System.out.println("5- İndirim yap");
+			System.out.println("6- Kitabı Güncelle");
+			System.out.println("7- İndirimli kitapları listele");
 			int secim = Util.intDegerAl("Seçiminiz? ");
 			switch (secim) {
 			case 1:
@@ -28,6 +30,12 @@ public class Main {
 				break;
 			case 5:
 				kutuphane.indirimYap();
+				break;
+			case 6:
+				kutuphane.kitabiGuncelle();
+				break;
+			case 7:
+				kutuphane.indirimListele();
 				break;
 			default:
 				break;
@@ -75,9 +83,10 @@ public class Main {
 		// kitap var mı yok mu onu bulur
 		// varsa o kitabı bize return eder
 		// yoksa bilgilendirir
-			
-		// indirimde olanları gösterebiliriz
 		
+		// Kitabı güncelleyelim (ismini)
+		
+		// İndirimde olan kitapları listeyelim
 		
 		adminMenu();
 
