@@ -3,35 +3,61 @@ package lesson018;
 public class Hasta implements Comparable<Hasta>{
 	
 	private String isim;
-	private String sikayet;
-	
+	private ESikayet sikayet;
+	private String sikayet2;
 	private int oncelik;
 
-	public Hasta(String isim, String sikayet) {
+	public Hasta(String isim, String sikayet2) {
+		super();
+		this.isim = isim;
+		this.sikayet2 = sikayet2;
+		// oncelikBelirle(sikayet);
+
+		this.oncelik = sikayet2.equalsIgnoreCase("Apandist") ? 1
+				: sikayet2.equalsIgnoreCase("Yanık") ? 2 : sikayet2.equalsIgnoreCase("Agrı") ? 3 : 4;
+	}
+
+	public Hasta(String isim, ESikayet sikayet) {
 		super();
 		this.isim = isim;
 		this.sikayet = sikayet;
-		//oncelikBelirle(sikayet);
-		
-		this.oncelik = sikayet.equalsIgnoreCase("Apandist") ? 1 
-				: sikayet.equalsIgnoreCase("Yanık") ? 2
-				: sikayet.equalsIgnoreCase("Agrı") ? 3 : 4;
+		oncelikBelirleEnum(sikayet);
 	}
-	
+
 	public void oncelikBelirle(String sikayet) {
-		if(sikayet.equalsIgnoreCase("Apandist")) {
-			this.oncelik =1;
-		}else if(sikayet.equalsIgnoreCase("Yanık")){
-			this.oncelik =2;
-		}else {
+		if (sikayet.equalsIgnoreCase("Apandist")) {
+			this.oncelik = 1;
+		} else if (sikayet.equalsIgnoreCase("Yanık")) {
+			this.oncelik = 2;
+		} else {
 			this.oncelik = 3;
 		}
 	}
 	
-	//Array, ArrayList farkı
-	//ArrayList, LinkedArraylist
-	//Hashmap, LinkedHasmap farkı arka tarafta nasıl çalışıyorlar
-	//Setler niye kullanılır, avantajları neler. 
+	//ILLEGALGUMENTHATASI
+	public void oncelikBelirleEnum(ESikayet sikayet) {
+		switch (sikayet) {
+		case APANDIST:
+			this.oncelik = 1;
+			break;
+		case YANIK:
+			this.oncelik = 2;
+			break;
+		case AGRI:
+			this.oncelik = 3;
+			break;
+
+		default:
+			throw new IllegalArgumentException("Beklenmedik değer girisi oldu");
+		}
+	}
+
+	// Sİkayeti Enum tutalım
+
+	// Array, ArrayList farkı
+	// ArrayList, LinkedArraylist
+	// Hashmap, LinkedHasmap farkı arka tarafta nasıl çalışıyorlar
+	// Setler niye kullanılır, avantajları neler.
 
 	public String getIsim() {
 		return isim;
@@ -41,11 +67,19 @@ public class Hasta implements Comparable<Hasta>{
 		this.isim = isim;
 	}
 
-	public String getSikayet() {
+//	public String getSikayet() {
+//		return sikayet;
+//	}
+//
+//	public void setSikayet(String sikayet) {
+//		this.sikayet = sikayet;
+//	}
+
+	public ESikayet getSikayet() {
 		return sikayet;
 	}
 
-	public void setSikayet(String sikayet) {
+	public void setSikayet(ESikayet sikayet) {
 		this.sikayet = sikayet;
 	}
 
@@ -59,17 +93,14 @@ public class Hasta implements Comparable<Hasta>{
 
 	@Override
 	public int compareTo(Hasta o) {
-		if(o.getOncelik() > this.oncelik) {
+		if (o.getOncelik() > this.oncelik) {
 			return -1;
-		}else if(o.getOncelik() < this.oncelik) {
+		} else if (o.getOncelik() < this.oncelik) {
 			return 1;
 		}
 		return 0;
 	}
-	
-	
-	
-	
+
 	// Hasta diye bir sınıf açalım
 	// isim, şikayet ve öncelik(int)
 
